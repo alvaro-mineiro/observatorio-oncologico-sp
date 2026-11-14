@@ -1,0 +1,5 @@
+Dados do painel index.html (gerado em 13/11/2026 21:07).
+Mantenha esta pasta (dados/) AO LADO do index.html, com este nome: o painel lê daqui os dados por
+município e por estabelecimento quando uma consulta precisa deles.
+Para compartilhar ou publicar, use a pasta do site inteira (index.html + dados/).
+A pasta é refeita do zero a cada execução do gerador.

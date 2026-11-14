@@ -1,0 +1,38 @@
+Observatório Oncológico do Estado de São Paulo — site gerado em 14/11/2026 10:36
+
+O QUE TEM NESTA PASTA
+  index.html      o painel (abre com dois cliques, sem internet só os mapas de fundo e as fontes ficam de fora)
+  dados/          dados por município e estabelecimento, carregados quando uma consulta precisa (não apague)
+  vercel.json     configuração de cache para o Vercel (ignorada em outros serviços)
+
+PUBLICAR NO VERCEL (uma vez instalado o Node.js: https://nodejs.org)
+  1. No Terminal:   cd "/Users/alvaromineiro/Documents/anan_data/analise_quanti_projeto/observatorio_site"
+  2. Primeira vez:  npx vercel@latest login          (entra com a conta do Vercel/GitHub)
+  3. Publicar:      npx vercel@latest deploy --prod
+     Na primeira publicação ele pergunta o nome do projeto (ex.: observatorio-oncologico-sp):
+     aceite os padrões ("Framework: Other", sem comando de build, diretório ".").
+  4. O endereço aparece no fim (https://<nome>.vercel.app). Ponha-o em CFG["URL_PUBLICA"] no gerador
+     e gere de novo, para ele sair nos relatórios e nos links compartilháveis.
+  Para atualizar: rode o gerador (a pasta é refeita) e repita o passo 3.
+  Limite: no plano gratuito (Hobby) o Vercel aceita até 100 MB de arquivos por publicação feita pela linha de
+  comando (o log do gerador mostra o total do site). Acima disso: plano Pro, ou uma das opções abaixo.
+  O plano Hobby é para uso não comercial; para um site institucional, confira os termos ou use o Pro.
+
+PUBLICAR NO GITHUB PAGES (até 1 GB; repositório só com esta pasta)
+  1. Crie um repositório novo em https://github.com/new (ex.: observatorio-oncologico-sp), sem README.
+  2. No Terminal, dentro desta pasta:
+       git init && git add . && git commit -m "Observatório" && git branch -M main
+       git remote add origin https://github.com/SEU_USUARIO/observatorio-oncologico-sp.git
+       git push -u origin main
+  3. No repositório: Settings → Pages → Deploy from a branch → main / (root) → Save.
+  Para atualizar (sem acumular versões antigas: a pasta dados/ é refeita a cada geração e, guardando o
+  histórico, o repositório cresceria até estourar o limite de 1 GB), rode o gerador e, nesta pasta:
+       git checkout --orphan nova && git add -A && git commit -m "Atualização"
+       git branch -D main && git branch -m main
+       git push -f origin main && git gc --prune=now
+  O GitHub recusa arquivos acima de 100 MB (o log do gerador mostra o maior arquivo do site).
+
+OUTRAS OPÇÕES (a pasta é um site estático: qualquer serviço de páginas estáticas serve)
+  - Netlify: arraste esta pasta para https://app.netlify.com/drop
+  - GitHub Pages: suba o conteúdo desta pasta num repositório e ative o Pages
+  - Servidor da USP: copie a pasta inteira para o diretório público do servidor
