@@ -1,4 +1,4 @@
-Dados do painel index.html (gerado em 14/11/2026 10:36).
+Dados do painel index.html (gerado em 17/11/2026 14:16).
 Mantenha esta pasta (dados/) AO LADO do index.html, com este nome: o painel lê daqui os dados por
 município e por estabelecimento quando uma consulta precisa deles.
 Para compartilhar ou publicar, use a pasta do site inteira (index.html + dados/).
